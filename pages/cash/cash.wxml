@@ -1,0 +1,51 @@
+
+<view class="container">
+    <view class="txt">宝宝要钱了,给点现金吧~</view>
+     <view class="avatarUrl">
+          <view class="col"  wx:if="{{show}}">
+            <image src="{{dataOne.avatarUrl}}" class="bao"></image>
+            <text>{{dataOne.roleTag}}</text>
+         </view>
+          <image src="../../images/pairenwu_icon_add.png" class="addrole" bindtap="modalTap" wx:if="{{addRole}}"></image>
+    </view>
+    <form  bindsubmit="formSubmit">
+      <view class="input">
+        <text class="loah">金额</text>
+        <input value="{{content.money}}" class="money" bindblur="blur" name="input" placeholder="不能大于可给金额"/>
+      </view>
+      <view class="amount" style="color:red">可给金额{{totalMoney}}元<text class="warn" wx:if="{{warn}}">请输入整数或小数点后最多两位</text></view>
+      <view class="area">
+        <textarea placeholder="{{placeholder}}" name="textarea" maxlength="100" wx:if="{{areaShow}}"/>
+      </view>
+      <view class="money">
+        <text class="first">¥</text>
+        <text class="last">{{content.money}}</text>
+      </view>
+      <button class="cash" formType="submit">给现金</button>
+      <view class="cashDes">给宝宝现金,相应金额将从宝宝的存款中扣除。         </view>
+    </form>
+</view>
+
+
+<!--单选弹窗模块-->
+<view class="model" wx:if="{{model}}">
+    <view class="model-bg">
+        <text>选择宝宝</text>
+        <form bindsubmit="modFormSubmit">
+          <scroll-view style="height:380rpx" scroll-y="true">
+            <radio-group name="radio" class="radio-group">
+                <label wx:for="{{dataList}}" wx:key="model"><image class="model-image" src="{{item.avatarUrl}}"></image>{{item.roleTag}}<radio value="{{index}}"/></label>
+            </radio-group>
+          </scroll-view>
+         <button class="confir" formType="submit">确认</button>
+        </form>
+    </view>
+</view>
+
+<!--提示任务弹窗模块-->
+<view class="popShow" wx:if="{{popShow}}">
+    <view class="popContainer">
+    信息填写不全,请补填完整
+    </view>
+</view>
+

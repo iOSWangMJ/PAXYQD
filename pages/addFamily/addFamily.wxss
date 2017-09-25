@@ -1,0 +1,24 @@
+/**index.wxss**/
+page{
+    background-color: #FF4A14;
+}
+.container{
+  width:730rpx;
+  height: 1154rpx;
+  background-image: url(http://paicwx.oss-cn-shanghai.aliyuncs.com/zhuangshidaikuang.png);
+  background-size:100% 100%;
+  position: relative;
+  top:30rpx;
+  left: 14rpx;
+}
+.btn{
+  width:570rpx;
+  height:200rpx;
+  margin:192rpx auto;
+  background-color: white;
+  background-image: url(http://paicwx.oss-cn-shanghai.aliyuncs.com/tianjiajiazhang.png);
+  background-size:100% 100%;
+}
+.btn::after{
+  border:none;
+}

@@ -1,0 +1,18 @@
+<view class="container">
+  <!--<form bindsubmit="handleSubmit">-->
+    <view class="txt">您在家庭中的角色</view>
+    <view class="roleTag">
+      <text bindtap="tag1" class="{{tag1Class}} {{tagDisClass1}}">{{role[0]}}</text>
+      <text bindtap="tag2" class="{{tag2Class}} {{tagDisClass2}}">{{role[1]}}</text>
+      <text bindtap="tag3" class="{{tag3Class}} {{tagDisClass3}}">{{role[2]}}</text>
+      <input name="input" placeholder="其他" bindinput="bindKeyInput" bindfocus="focus" value="{{tagInput}}"/>
+    </view>
+    <button class="next" bindtap="toAddFamily">下一步</button>
+  <!--</form>-->
+</view>
+<!--模态弹出框-->
+  <view wx:if="{{popShow}}" class="popShow">
+    <view class="popContainer">
+      <span>{{popShowText}}</span>
+    </view>
+  </view>

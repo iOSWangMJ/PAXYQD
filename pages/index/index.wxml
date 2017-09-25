@@ -1,0 +1,309 @@
+<!--邀请模板-->
+<template name="0301">
+  <view class="activity-title">
+    <text class="member-tag">{{roleTag}}</text>
+    <text class="invite-parent activity-status tag-style" wx:if="{{roleType==='00'}}">发起了一次家长邀请</text>
+    <text class="invite-baby activity-status tag-style" wx:if="{{roleType==='01'}}">发起了一次宝宝邀请</text>
+    <text class="invite-friend activity-status tag-style" wx:if="{{roleType==='02'}}">发起了一次朋友邀请</text>
+  </view>
+  <view style="height:14rpx;"></view>
+  <view class="activity-footer">
+    <text class="time">{{createTime}}</text>
+  </view>
+</template>
+<!--任务完成模板-->
+<template name="0103">
+ <view class="hongbao"  style="margin-top: -3rpx;">
+      <text class="reward">奖</text>
+      <text class="reward-sum">{{money}}</text>
+  </view>
+  <view class="activity-title">
+    <text class="member-tag">{{roleTag}}</text>
+    <text class="task-finish activity-status tag-style">任务完成</text>
+  </view>
+  <view class="activity-content">
+    <view class="activity-desc">
+     {{desc}}
+    </view>
+    <view class="activity-icon">
+      <block wx:key="{{index}}" wx:for="{{imageUrl}}" wx:for-item="icon">
+       <image catchtap="handleBrowsePic" data-index="{{index}}" data-images="{{imageUrl}}" class="thumbnail" src="{{icon.oriImage}}"></image>
+      </block>
+    </view>
+  </view>
+  <view class="activity-footer">
+    <text class="time">{{createTime}}</text> 
+  </view>
+</template>
+<!--申请完成模板-->
+<template name="0102">
+  <view class="activity-title">
+    <text class="member-tag">{{roleTag}}</text>
+    <text class="apply-finish activity-status tag-style">申请完成</text>
+    <image class="arrow" src="../../images/jiantou@2x.png"></image>
+      <text class="apply-finish tag-style" style="display:inline-block;margin-bottom:4rpx;margin-right:4rpx">{{chRoleTag}}</text>
+  </view>
+  
+  <view class="activity-content">
+    <view class="activity-desc">
+     {{desc}}
+    </view>
+    <view class="activity-icon">
+      <block wx:key="{{index}}" wx:for="{{imageUrl}}" wx:for-item="icon">
+       <image catchtap="handleBrowsePic" data-index="{{index}}" data-images="{{imageUrl}}" class="thumbnail" src="{{icon.oriImage}}"></image>
+      </block>
+    </view>
+  </view>
+  <view class="activity-footer">
+    <text class="time">{{createTime}}</text> 
+  </view>
+</template>
+<!--讨红包模板-->
+<template name="0104">
+  <view class="activity-title">
+    <text class="member-tag">{{roleTag}}</text>
+    <text class="askfor-redpacket activity-status tag-style">讨红包</text>
+    <button data-dynId="{{dynId}}" data-chMemberId="{{chGroupMemberId}}" class="award" data-roleTag="{{roleTag}}" data-avatarUrl="{{avatarUrl}}" catchtap="handleClickAward"></button>
+  </view>
+  <view class="activity-content">
+    <view class="activity-desc">
+      {{desc}}
+    </view>
+    <view class="hongbao"  style="margin-top: 15rpx;">
+      <text class="redpacket">红包</text>
+      <text class="redpacket-sum">{{money}}</text>
+    </view>
+    <view class="activity-icon askfor-activity-icon">  
+      <block wx:key="{{index}}" wx:for="{{imageUrl}}" wx:for-item="icon">
+       <image catchtap="handleBrowsePic" data-index="{{index}}" data-images="{{imageUrl}}" class="thumbnail" src="{{icon.oriImage}}"></image>
+      </block>
+    </view>
+  </view>
+  <view class="activity-footer">
+    <text class="time">{{createTime}}</text>
+  </view>
+  <view class="have-redpacket" wx:if="{{redPacketMessage.length!=0}}">
+    <image class="line" src="../../images/tabbar_longline.png"></image>
+    <block wx:key="{{index}}" wx:for="{{redPacketMessage}}" wx:for-item="redpacket">
+      <view class="redpacket-message">
+        <text>{{redpacket.parentTag}}发红包</text>
+        <text style="margin-left:10rpx;">+{{redpacket.award}}元</text>
+      </view>
+    </block>
+  </view>
+</template>
+<!--发任务-->
+<template name="0101">
+  <view class="activity-title">
+    <text class="member-tag">{{roleTag}}</text>
+    <text class="send-task activity-status tag-style">发任务</text>
+    <image class="arrow" src="../../images/jiantou@2x.png"></image>
+    <!--<block wx:key="{{index}}" wx:for="{{children}}" wx:for-item="childTag">-->
+      <text class="send-task tag-style" style="display:inline-block;margin-bottom:4rpx;margin-right:4rpx">{{chRoleTag}}</text>
+    <!--</block>-->
+    <view class="rt tast-figure">
+      <text class="sym">+</text>
+      <text class="money">{{money}}</text>
+      <text class="unit">元</text>
+    </view>
+  </view>
+  <view class="activity-content">
+    <view class="activity-desc">
+     {{desc}}
+    </view>
+  </view>
+    <view class="activity-footer">
+    <text class="time">{{createTime}}</text>
+    <!--<view class="rt complete-date">-->
+      <text class="complete-text complete-date">完成期限 {{finishTime}}</text>
+      <!--<text></text>-->
+    <!--</view>-->
+  </view>
+</template>
+<!--受理讨红包-->
+<template name="0004">
+  <view class="hongbao" style="margin-top:-6rpx;">
+    <text class="redpacket">红包</text>
+    <text class="redpacket-sum">{{money}}</text>
+  </view>
+  <view class="activity-title">
+    <text class="member-tag">{{roleTag}}</text>
+    <text class="send-redpacket activity-status tag-style">发红包</text>
+    <image class="arrow" src="../../images/jiantou@2x.png"></image>
+    <text class="send-redpacket tag-style" style="display:inline-block;margin-bottom:4rpx;margin-right:4rpx">{{chRoleTag}}</text>
+  </view>
+  <view class="activity-content">
+    <view class="activity-desc">
+     {{desc}}
+    </view>
+  </view>
+  <view class="activity-footer">
+    <text class="time">{{createTime}}</text>
+  </view>
+</template>
+<!--发红包模板-->
+<template name="0001">
+  <view class="hongbao" style="margin-top:-6rpx;">
+    <text class="redpacket">红包</text>
+    <text class="redpacket-sum">{{money}}</text>
+  </view>
+  <view class="activity-title">
+    <text class="member-tag">{{roleTag}}</text>
+    <text class="send-redpacket activity-status tag-style">发红包</text>
+    <image class="arrow" src="../../images/jiantou@2x.png"></image>
+    <text class="send-redpacket tag-style" style="display:inline-block;margin-bottom:4rpx;margin-right:4rpx">{{chRoleTag}}</text>
+  </view>
+  <view class="activity-content">
+    <view class="activity-desc">
+     {{desc}}
+    </view>
+  </view>
+  <view class="activity-footer">
+    <text class="time">{{createTime}}</text>
+  </view>
+</template>
+<!--代收钱模板-->
+<template name="0002">
+  <view class="hongbao" style="margin-top:-6rpx;">
+    <text class="achieve">收</text>
+    <text class="achieve-sum">{{money}}</text>
+  </view>
+  <view class="activity-title">
+    <text class="member-tag">{{roleTag}}</text>
+    <text class="receive-account activity-status tag-style">代收钱</text>
+    <image class="arrow" src="../../images/jiantou@2x.png"></image>
+    <text class="receive-account tag-style" style="display:inline-block;margin-bottom:4rpx;margin-right:4rpx">{{chRoleTag}}</text>
+  </view>
+  <view class="activity-content">
+    <view class="activity-desc">
+     {{desc}}
+    </view>
+  </view>
+  <view class="activity-footer">
+    <text class="time">{{createTime}}</text>
+  </view>
+</template>
+<!--兑现-->
+<template name="0003">
+  <view class="hongbao"  style="margin-top: -3rpx;">
+    <text class="reward">支</text>
+    <text class="reward-sum">{{money}}</text>
+  </view>
+  <view class="activity-title">
+    <text class="member-tag">{{roleTag}}</text>
+    <text class="give-cash activity-status tag-style">给现金</text>
+    <image class="arrow" src="../../images/jiantou@2x.png"></image>
+    <text class="give-cash tag-style" style="display:inline-block;margin-bottom:4rpx;margin-right:4rpx">{{chRoleTag}}   </text>
+  </view>
+  <view class="activity-content">
+    <view class="activity-desc">
+     {{desc}}
+    </view>
+  </view>
+  <view class="activity-footer">
+    <text class="time">{{createTime}}</text>
+  </view>
+</template>
+
+<!--权限-->
+<!--发红包-->
+<template name="auth0001">
+  <view data-statu="open" catchtap="handleClickAuth" data-url="../giveHongBao/giveHongBao">
+    <image class="fahongbao" src="../../images/icon_fahongbao.png"></image>
+    <text class="auth-text">发红包</text>
+  </view>
+</template>
+<!--代收钱-->
+<template name="auth0002">
+  <view data-statu="open" catchtap="handleClickAuth" data-url="../collectMoney/collectMoney">
+    <image class="daishouqian" src="../../images/icon_daishouqian.png"></image>
+    <text class="auth-text">代收钱</text>
+  </view>
+</template>
+<!--派任务-->
+<template name="auth0101">
+  <view data-statu="open" catchtap="handleClickAuth" data-url="../assignTask/assignTask">
+    <image class="pairenwu" src="../../images/icon_pairenwu.png"></image>
+    <text class="auth-text">派任务</text>
+  </view>
+</template>
+<!--给现金-->
+<template name="auth0003">
+  <view data-statu="open" catchtap="handleClickAuth" data-url="../cash/cash">
+    <image class="duixian" src="../../images/duixian.png"></image>
+    <text class="auth-text">给现金</text>
+  </view>
+</template>
+<!--讨红包-->
+<template name="auth0104">
+  <view data-statu="open" catchtap="handleClickAuth" data-url="../askHongBao/askHongBao">
+    <image class="taohongbao" src="../../images/icon_taohongbao.png"></image>
+    <text class="auth-text">讨红包</text>
+  </view>
+</template>
+<!--我的任务-->
+<template name="auth0102">
+  <view data-statu="open" catchtap="handleClickAuth" data-url="../taskList/taskList?groupMemberId={{groupMemberId}}&isParent=false">
+    <image class="pairenwu" src="../../images/icon_pairenwu.png"></image>
+    <text class="auth-text">我的任务</text>
+  </view>
+</template>
+<!--分享-->
+<template name="auth0301">
+  <navigator hover-class="none" url="../share/share">
+    <image class="fenxiang" src="../../images/shouye_fenxiang@2x.png"></image>
+    <text class="auth-text">分享</text>
+  </navigator>
+</template>
+
+
+<view class="container">
+  <view class="header">
+    <block wx:key="{{index}}" wx:for="{{auth}}">
+      <view class="auth" style="width:{{authWidth}}%">
+        <template data="{{...authParam}}" is="{{item}}"></template>
+      </view>
+    </block>
+  </view> 
+  <view class="content">
+    <block wx:key="{{index}}" wx:for="{{dataList}}" wx:for-item="dynamicItem">
+      <image class="lf-img nail" src="{{nailUrl}}"></image>
+      <image class="rt-img nail" src="{{nailUrl}}"></image>
+      <view class="dynamic-area">
+        <view data-type="{{dynamicItem.type}}" data-parentGroupMemberId="{{dynamicItem.groupMemberId}}" data-chGroupMemberId="{{dynamicItem.chGroupMemberId}}" bindtap="handleClickDynamicArea" data-taskId="{{dynamicItem.taskId}}" data-avatarUrl="{{dynamicItem.avatarUrl}}" data-taskState="{{dynamicItem.taskState}}" class="dynamic-content">
+          <view class="lfsection" data-type="{{dynamicItem.type}}" data-chGroupMemberId="{{dynamicItem.chGroupMemberId}}" data-groupMemberId="{{dynamicItem.groupMemberId}}" catchtap="handleClickIcon">
+          <image class="personal-icon" src="{{dynamicItem.avatarUrl}}"></image>
+          </view>
+          <view class="rtsection">
+            <template is="{{dynamicItem.type}}" data="{{...dynamicItem}}"></template>
+          </view>
+        </view>
+      </view>
+    </block>
+    <!--wx:if="{{dataList.length==showData.length}}"-->
+    <block wx:if="{{!haveMore}}" wx:key="{{index}}" wx:for="{{bannerImg}}" wx:for-item="img">
+      <image class="lf-img nail" src="{{nailUrl}}"></image>
+      <image class="rt-img nail" src="{{nailUrl}}"></image>
+        <navigator open-type="navigateTo" hover-class="none" url="../aboutproduct/aboutproduct?image={{img.index}}">
+        <view class="banner banner_chanpin" >
+        <!--style="background-image: url('{{imgUrl}}/{{img.banner}}')"-->
+          <image src="{{imgUrl}}/{{img.banner}}" style="width:100%;height:100%"></image>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>
+
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view> 
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}"> 
+  
+ <!--drawer content-->
+ <view class="drawer_title">温馨提示</view> 
+ <view class="drawer_content">
+ 请邀请{{tag}}加入您的家庭
+ </view>
+ <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view> 
+</view>

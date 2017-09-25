@@ -1,0 +1,15 @@
+<view class="container">
+      <view class="chengliang">
+          <image src="{{avatarUrl}}"></image>
+      </view>
+      <view class="text">{{nickName}} 邀请您使用小友钱袋,并加入他（她）的家庭</view>
+      <button class="right-away" bindtap="addFamily">马上加入</button>
+      <button class=" reject" bindtap="disagree">默默拒绝</button>
+</view>
+
+<!--模态弹出框-->
+  <view wx:if="{{popShow}}" class="popShow">
+    <view class="popContainer">
+      <span>{{popShowText}}</span>
+    </view>
+  </view>

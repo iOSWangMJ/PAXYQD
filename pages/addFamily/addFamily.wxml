@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container"> 
+  <!--设置open-type属性-->
+  <button class="btn" open-type="share"></button>
+  <!--<button class="btn" bindtap="goAddPar"></button>-->
+</view> 

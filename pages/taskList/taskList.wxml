@@ -1,0 +1,63 @@
+<view class="container">
+  <!--顶部任务列表-->
+  <view>
+    <image class="topTitle" src="../../images/businessIcon/renwuliebiao.png"></image>
+  </view>
+  <!--任务列表详细-->
+  <scroll-view scroll-y class="taskListContent" bindscrolltoupper="upper" bindscrolltolower="lower" upper-threshold="5" lower-threshold="5"> 
+    <!--任务详情列表模板--start-->
+      <view style="margin-top:22rpx;" wx:for="{{dataList}}" wx:key="*this" data-taskid="{{item.taskId}}" data-childid="{{item.groupMemberId}}" data-state="{{item.taskState}}" bindtap="goTaskDetail">
+        <!--第一行详情-->
+        <view>
+          <image src="{{item.iconSrc}}" class="taskIcon"></image>
+          <text class="taskDesc">{{item.desc}}</text>
+          <template is="{{item.taskState}}"/>
+        </view>
+        <!--头像部分-->
+        <view class="contentHead" style="margin-top:12rpx;" data-id="{{item.groupMemberId}}" catchtap="goPerson">
+            <image src="{{item.avatarUrl}}" class="contentImage" style="margin-right:20rpx;"></image>
+        </view>
+        <!--最后一行详情-->
+        <view class="taskFin">
+          <text>完成期限 {{item.finishTime}}</text>
+          <!--展示金钱-->
+          <span class="taskMore">
+            <text>+</text>
+            <text class="taskMoney">{{item.money}}</text>          
+            <text class="yuan">元</text>
+          </span>        
+        </view>
+        <!--分割线-->
+        <image src="../../images/businessIcon/tabbar_longline.png" class="devideImage"></image>
+      </view>
+      <!--任务详情列表模板--end-->
+      
+      <!--当没有此动态时显示以下模块-->
+        <view wx:if="{{!taskNotNull}}" style="width:100%;height:100%;text-align:center;">
+          <image  src="../../images/renwu@2x.png"  class="taskNotNull"></image>
+        </view>        
+       
+  </scroll-view>
+</view>
+
+<!--状态对象模板  -->
+<template name="01">
+  <view class="taskState taskOn">
+    <span>进行中</span>
+  </view>
+</template>
+<template name="02">
+  <view class="taskState taskApplication">
+    <span>申请完成</span>
+  </view>
+</template>
+<template name="03">
+  <view class="taskState taskClose">
+    <span>已关闭</span>
+  </view>
+</template>
+<template name="04">
+  <view class="taskState taskComplate">
+    <span>已完成</span>
+  </view>
+</template>

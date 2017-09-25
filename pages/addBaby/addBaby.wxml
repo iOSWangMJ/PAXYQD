@@ -1,0 +1,4 @@
+<view class="container"> 
+  <button class="btn" open-type="share"></button>
+  <!--<button class="btn" bindtap="goAddBaby"></button>-->
+</view> 

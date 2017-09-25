@@ -1,0 +1,151 @@
+.container{
+  position:relative;
+}
+.topContainer{
+  position:absolute;
+  width:620rpx;
+  height:502rpx;
+  background-image: url('http://paicwx.oss-cn-shanghai.aliyuncs.com/dabaodeqiandai.png');
+  background-size:100% 100%;
+  left:66rpx;
+  z-index:2;
+  box-sizing: border-box;
+}
+.bottomContainer{
+  width:690rpx;
+  height:852rpx;
+  background-image: url('http://paicwx.oss-cn-shanghai.aliyuncs.com/kuang_down_short.png');
+  background-size:100% 100%;
+  position:absolute;
+  left:30rpx;
+  top:256rpx;
+  z-index:1;
+  padding-top:296rpx;
+  padding-left:36rpx;
+  box-sizing: border-box;
+}
+.topHeadImage{
+  width:72rpx;
+  height:84rpx;
+  margin-left:274rpx;
+  margin-top:108rpx;
+}
+.topTag{
+  text-align:center;
+  margin-top:22.2rpx;
+  margin-bottom:40rpx;
+  font-size: 32rpx;
+  color: #333;
+  letter-spacing: -0.56rpx;
+}
+.contentHead{
+  display:inline-block;
+  vertical-align: middle;
+  margin-left:126rpx;
+  margin-right:12rpx;
+}
+.contentImage{
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 4rpx solid black;
+  padding: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.parTag{
+  font-size: 24rpx;
+  color: #333;
+  letter-spacing: -0.78rpx;
+  padding-right:20rpx;
+}
+.sum{
+  font-size: 52rpx;
+  color: #D8232A;
+  letter-spacing: -0.78rpx;
+  padding-right:18rpx;
+}
+.yuan{
+  font-size: 22rpx;
+  color: #333;
+  letter-spacing: -0.70rpx;
+}
+.rateYest{
+  font-size: 24rpx;
+  color: #333;
+  letter-spacing: -0.78rpx;
+  padding-right:26rpx;
+}
+.rateYestSum{
+  display:inline-block;
+}
+.rateSum{
+  font-size: 32rpx;
+  color: #D8232A;
+  letter-spacing: -0.78rpx;
+  padding-right:8rpx;
+}
+.monthChange{
+  font-size: 24rpx;
+  color: #333;
+  letter-spacing: -0.78rpx;
+  padding-right:10rpx;
+}
+.rateMonth{
+  font-size: 32rpx;
+  color: #D8232A;
+  letter-spacing: -0.78rpx;
+  padding-right:8rpx;
+}
+.walletTag{
+  width:146rpx;
+  height:56rpx;
+  margin-bottom:40rpx;
+}
+.runningDeatil{
+  width:650rpx;
+  height:378rpx;
+  box-sizing:border-box;
+  /*background-color:#333;*/
+}
+.commonTag{
+  width:60rpx;
+  height:60rpx;
+}
+.runDetailMoney{
+  width:650rpx;
+  height:60rpx;
+  line-height:60rpx;
+  text-align:center;
+  font-size: 40rpx;
+  color: #D8232A;
+  letter-spacing: -0.96rpx;
+  margin-bottom:40rpx;
+}
+.qu{
+  color: #0CD41A;
+}
+.timeStyle{
+  font-size: 22rpx;
+  color: #666;
+  letter-spacing: -0.70rpx;
+  height:30rpx;
+  margin-bottom:10rpx;
+}
+.descStyle{
+  font-size: 24rpx;
+  color: #333;
+  letter-spacing: -0.78rpx;
+  height:30rpx;
+}
+.runDetailTime{
+  float:right;
+  height:60rpx;
+  position:relative;
+  top:-20rpx;
+  padding-right:48rpx;
+}
+.devideImage{
+  width:642rpx;
+  height:4rpx;
+  display:block;
+}

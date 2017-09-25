@@ -1,0 +1,58 @@
+<!--<template name="giveHongBao">
+</template>-->
+
+
+<view class="container">
+  <!--<template is="giveHongBao" data="{{...list}}"></template>-->
+    <view class="txt">给宝宝发个红包吧~</view>
+    <view class="avatarUrl">
+          <!--<template is="role" data="{{...role}}"></template>-->
+          <view class="col" wx:if="{{show}}">
+            <image src="{{dataOne.avatarUrl}}" class="bao"></image>
+            <text>{{dataOne.roleTag}}</text>
+          </view>
+          <image src="../../images/pairenwu_icon_add.png" class="addrole" bindtap="modaTap" wx:if="{{addRole}}"></image>
+    </view>
+    <form bindsubmit="formSubmit">
+      <view class="input">
+        <text class="loah">打赏金额</text>
+        <input placeholder="金额不能超过9999元" bindblur="blur" value="{{content.money}}" name="input"/>
+      </view>
+      <view>
+      <text class="warn" wx:if="{{warn}}">请输入整数或小数点后最多两位</text></view>
+      <view class="area">
+        <textarea placeholder="{{placeholder}}" name="textarea" maxlength="100" wx:if="{{areaShow}}"></textarea>
+      </view>
+      <view class="totalMoney">
+        <text class="first">¥</text>
+        <text class="last">{{content.money}}</text>
+      </view>
+      <button class="giveMoney" formType="submit">给红包</button>
+      <view class="giveMoneyDes">给宝宝红包，红包金额将计入宝宝在您这边的存款中     </view>
+    </form>
+</view>
+
+
+<!--单选弹窗模块-->
+<view class="model" wx:if="{{model}}">
+    <view class="model-bg">
+        <text>选择宝宝</text>
+        <!--<view class="model-list" wx:for="{{dataList}}">
+          <image src="{{item.avatarUrl}}"></image>
+        </view>-->
+        <form bindsubmit="modFormSubmit">
+          <scroll-view style="height:380rpx" scroll-y="true">
+            <radio-group name="radio" class="radio-group">
+                <label wx:for="{{dataList}}" wx:key="model"><image class="model-image" src="{{item.avatarUrl}}"></image>{{item.roleTag}}<radio value="{{index}}"/></label>
+            </radio-group>
+          </scroll-view>
+         <button class="confir" formType="submit">确认</button>
+        </form>
+    </view>
+</view>
+<!--提示任务弹窗模块-->
+<view class="popShow" wx:if="{{popShow}}">
+    <view class="popContainer">
+    信息填写不全,请补填完整
+    </view>
+</view>

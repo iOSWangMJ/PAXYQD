@@ -1,0 +1,99 @@
+<view class="container">
+  <!--上部内容展示区域-->
+  <!--第一行-->
+  <view class="topContainer">
+    <image src="{{topHeadImage}}" class="topHeadImage" catchtap="goPerson" data-id="{{topChildId}}"></image>
+    <view class="topTag">
+      {{topTag}}的钱袋
+    </view>
+    <!--第二行-->
+    <view style="margin-bottom:46rpx;">
+      <!--头像-->
+      <view class="contentHead" data-id="{{parId}}"  catchtap="goPerson">
+        <image src="{{parHeadImage}}" class="contentImage"></image>
+      </view>
+      <text class="parTag">{{parTag}}</text>
+      <view style="display:inline-block;">
+        <text class="sum">{{sum}}</text>
+        <text class="yuan">元</text>
+      </view>
+    </view>
+    <!--第三行-->
+    <view style="margin-left:40rpx;">
+      <text class="rateYest">昨日收益</text>
+      <view class="rateYestSum">
+        <text class="rateSum">{{rateYestSum}}</text>
+        <text class="yuan">元</text>
+      </view>
+      <view style="float:right;margin-right:40rpx;"> 
+        <text class="monthChange">本月变动</text>
+        <view style="display:inline-block;">
+          <text>+</text>
+          <text class="rateMonth">{{rateMonth}}</text>
+          <text class="yuan">元</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--下半部分展示区域--start-->
+  <view class="bottomContainer">
+    <view>
+      <!--钱袋标签部分-->
+      <view>
+        <image src="{{runningWallet}}" class="walletTag"></image>
+      </view>
+      <!--钱袋详情部分--start-->
+      <scroll-view scroll-y class="runningDeatil" bindscrolltoupper="upper" bindscrolltolower="lower" upper-threshold="5" lower-threshold="5">
+        <!--模板-->
+        <view style="margin-bottom:32rpx;" wx:key="*this" wx:for="{{dataList}}">
+        <template is="{{item.type}}" data="{{...item}}"/>
+          <!--分割线-->
+          <image src="{{divideImage}}" class="devideImage"></image>    
+        </view>
+
+      </scroll-view>
+    </view>
+  </view>
+  <!--下半部分展示区域--end-->
+</view>
+
+<!--图标对应模板  -->
+<template name="02">  
+  <view style="float:left;">
+     <image src="../../images/businessIcon/xi@2x.png" 
+  class="commonTag"></image>
+  </view>
+  <view class="runDetailMoney">            
+    <text>+ {{money}}</text>
+    <view class="runDetailTime">
+      <view class="timeStyle">{{time}}</view>
+      <view class="descStyle">{{desc}}</view>
+    </view>
+  </view>
+</template>
+
+<template name="00">  
+<view style="float:left;">
+  <image src="../../images/businessIcon/cun@2x.png" class="commonTag"></image>
+  </view>
+  <view class="runDetailMoney">            
+    <text>+ {{money}}</text>
+    <view class="runDetailTime">
+      <view class="timeStyle">{{time}}</view>
+      <view class="descStyle">{{desc}}</view>
+    </view>
+  </view>
+</template>
+
+<template name="01">  
+<view style="float:left;">
+  <image src="../../images/businessIcon/qu@2x.png" class="commonTag"></image>
+  </view>
+  <view class="runDetailMoney qu">            
+    <text>- {{money}}</text>
+    <view class="runDetailTime">
+      <view class="timeStyle">{{time}}</view>
+      <view class="descStyle">{{desc}}</view>
+    </view>
+  </view>
+</template>

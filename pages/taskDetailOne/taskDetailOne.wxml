@@ -1,0 +1,101 @@
+<template name="img">
+  <block wx:for="{{imageUrl}}" wx:key="{{index}}">
+    <image catchtap="handleBrowserImg" data-index="{{index}}" data-images="{{imageUrl}}" src="{{item.oriImage}}" class="shrImage"></image>
+  </block>
+</template>
+
+<view class="container">
+  <scroll-view scroll-y="true" style="height:100%;width:100%">
+          <view class="task-text">
+          <image src="{{IconSrc}}" class="task-icon"></image>
+          <text>{{desc}}</text>
+      </view>
+      <view class="daojishi">
+          <text class="day" style="color:black">{{day}}</text>
+          <text >{{time}}</text>
+      </view>
+      <view class="task-time">
+       <text class="money"> +{{money}}</text>
+       <text style="color:#535353">元</text>
+      </view>
+      <block wx:for="{{applyComplete}}" wx:key="{{index}}">
+        <view class="task-status-finsh">
+            <image src="../../images/fengexian.png" class="fengexian"></image>
+            <view class="col">
+              <view class="col-preson">
+                <navigator hover-class="none" open-type="redirect" url="../personalInfo/personalInfo?groupMemberId={{item.chGroupMemberId}}">
+                  <image src="{{item.avatarUrl}}" class="image"></image>
+                  <text>{{item.roleTag}}</text>
+                </navigator>
+              </view>
+              <view class="col-des">
+                <text>{{item.desc}}</text>
+                
+                <template is="img" data="{{...item}}"></template>
+                <text class="submitTime">{{item.submitTime}}</text>
+                  <view class="btn">
+                    <button data-taskId="{{item.taskId}}" data-chGroupMemberId="{{item.chGroupMemberId}}" catchtap="handleClickConfirm" class="confir"><image src="../../images/icon_sad.png"></image>确认完成</button>
+                    <!--<button data-taskId="{{item.taskId}}" data-chGroupMemberId="{{item.chGroupMemberId}}" catchtap="handleClickRepeat" class="redo"><image src="../../images/icon_sad.png"></image>关闭任务</button>  -->
+                </view>
+              </view>
+            </view>
+        </view>
+      </block>
+      <view wx:if="{{inSwing.length}}" class="task-status-doing">
+          <image src="../../images/fengexian.png" class="fengexian"></image>
+          <view class="col">
+             <text style="float:left;color:#004EC9">进行中</text>
+            <view style="overflow:hidden;">
+              <view wx:for="{{inSwing}}" wx:key="{{index}}" class="col-preson" style="margin-left:40rpx">
+                <navigator hover-class="none" open-type="redirect" url="../personalInfo/personalInfo?groupMemberId={{item.chGroupMemberId}}">
+                  <image src="{{item.avatarUrl}}" class="image"></image>
+                  <text>{{item.roleTag}}</text>
+                </navigator>
+              </view>
+            </view>
+          </view>
+      </view>
+      <view wx:if="{{completed.length}}" class="task-status-doing">
+          <image src="../../images/fengexian.png" class="fengexian"></image>
+          <view class="col">
+             <text style="float:left;color:#3ec93e">已完成</text>
+            <view style="overflow:hidden;">
+              <view wx:for="{{completed}}" wx:key="{{index}}" class="col-preson" style="margin-left:40rpx">
+                <navigator hover-class="none" open-type="redirect" url="../personalInfo/personalInfo?groupMemberId={{item.chGroupMemberId}}">
+                  <image src="{{item.avatarUrl}}" class="image"></image>
+                  <text>{{item.roleTag}}</text>
+                </navigator>
+              </view>
+            </view>
+          </view>
+      </view>
+      <view wx:if="{{closed.length}}" class="task-status-doing">
+          <image src="../../images/fengexian.png" class="fengexian"></image>
+          <view class="col">
+             <text style="float:left;color:#cd000d">已关闭</text>
+            <view style="overflow:hidden;">
+              <view wx:for="{{closed}}" wx:key="{{index}}" class="col-preson" style="margin-left:40rpx">
+                <navigator hover-class="none" open-type="redirect" url="../personalInfo/personalInfo?groupMemberId={{item.chGroupMemberId}}">
+                  <image src="{{item.avatarUrl}}" class="image"></image>
+                  <text>{{item.roleTag}}</text>
+                </navigator>
+              </view>
+            </view>
+          </view>
+      </view>
+  </scroll-view>
+</view>
+
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view> 
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}"> 
+  
+ <!--drawer content-->
+ <view class="drawer_title">您的任务已过期</view> 
+ <view class="drawer_content">
+ 点击确定或空白处返回首页
+ </view>
+ <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>
+ </view>

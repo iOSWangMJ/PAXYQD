@@ -1,0 +1,6 @@
+<!--pages/enter/enter.wxml-->
+<view class="container">
+   <image src="../../images/icon.png" class="xiaoyoudai"></image>
+   <text>小友钱袋</text>
+   <image src="../../images/loading.gif" class="loading"></image>
+</view>

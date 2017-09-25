@@ -1,0 +1,144 @@
+page{
+ background-color: #FF4A14;
+}
+.container{
+  width:730rpx;
+  height: 1154rpx;
+  background-image: url("http://paicwx.oss-cn-shanghai.aliyuncs.com/shouhuikuang_big.png");
+  background-size:100% 100%;
+  position: relative;
+  top:30rpx;
+  left: 14rpx;
+  padding-left: 46rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  box-sizing:border-box;
+}
+.task-text{
+  margin:50rpx 0 36px 12rpx;
+}
+.task-text .task-icon{
+  width:22rpx;
+  height: 32rpx;
+  display: inline-block;
+  vertical-align:top;
+  margin-top:8rpx;
+  margin-right:14rpx;
+}
+.task-text text{
+  font-size: 32rpx;
+  color: #333;
+}
+.task-time{
+  margin:16rpx 0 0 50rpx;
+  font-size: 28rpx;
+  position: relative;
+}
+.task-time .money{
+  font-size:32rpx;
+  color:#D8232A;
+  font-weight: bold;
+}
+.task-time{
+   font-size:26rpx;
+   color:white;
+   position: absolute;
+   top:60px;
+   right:80rpx;
+   z-index: 9;
+}
+.day{
+  color: black;
+  position: absolute;
+   left: -110rpx;
+   font-size: 40rpx;
+}
+.task-time .clock{
+   width:118rpx;
+   height:88rpx;
+   position: absolute;
+   right:57rpx;
+   top:-54rpx;
+}
+.fengexian{
+  width: 630rpx;
+  height:4rpx;
+  margin:40rpx 0 20rpx;
+}
+.col .col-preson{
+   float:left;
+   width:100rpx;
+   text-align:center;
+}
+.col .col-des{
+     margin-left: 130rpx;
+}
+.col .image{
+  border-radius: 50%;
+  border: 4rpx solid black;
+  box-sizing: border-box;
+  padding: 10rpx;
+  width:60rpx;
+  height:60rpx;
+  vertical-align: middle;
+  margin-bottom: 20rpx;
+}
+.col text{
+  display: block;
+  font-size: 28rpx;
+  color:#333;
+}
+.col-des text{
+  font-size: 26rpx;
+}
+.col-des .shrImage{
+  width:100rpx;
+  height:100rpx;
+  margin:20rpx 20rpx 10rpx 0; 
+  border-radius:8rpx;
+  /*background-color: red;*/
+}
+.col-des .btn{
+  margin-top: 20rpx;
+}
+ .btn button{
+  float: left;
+  width:216rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  border-radius:30rpx;
+  text-align: center;
+  color:white;
+   
+}
+.btn image{
+  width:32rpx;
+  height:32rpx;
+  vertical-align: middle;
+  margin-top: -7rpx;
+  margin-right:12rpx;
+}
+button.confir{
+  background-color:#D8232A; 
+  margin-right: 40rpx;
+}
+button.redo{
+  background-color: #999;
+}
+.confir::after,.redo::after{
+  border:none;
+} 
+.daojishi{
+  font-size:26rpx;
+  color:white;
+  position: absolute;
+  top: 20rpx;
+  right: 60rpx;
+  line-height: 62px;
+  text-align: center;
+  width:140rpx;
+  height:55px;
+  background:url("http://paicwx.oss-cn-shanghai.aliyuncs.com/daojishi_bg.png");
+  background-size: 100% 100%;
+}

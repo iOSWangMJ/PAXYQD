@@ -1,0 +1,71 @@
+<view class="container">
+  <scroll-view scroll-y="true" class="content" enable-back-to-top="true">
+    <view style="padding:0 40rpx;">
+      <view class="clearmargin">
+        <view class="line"></view>
+        <view class="parent">
+          <view class="hole"></view>
+          <view class="parent-text">
+            家长
+          </view>
+          <view class="parent-member">
+            <block wx:key="{{index}}" wx:for="{{parents}}" wx:for-item="parent">
+              <navigator url="../personalInfo/personalInfo?groupMemberId={{parent.groupMemberId}}" open-type="redirect" hover-class="none" class="personal">
+                <!--<view >-->
+                  <image class="personal-icon" src="{{parent.avatarUrl}}"></image>
+                  <text class="parent-name">{{parent.roleTag}}</text>
+                <!--</view>-->
+              </navigator>
+            </block>
+            <view class="personal">
+                <button open-type="share" id="toParent" class="personal-icon person-add"></button>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!--<button id="toBaby" wx:if="{{haveChild}}" class="no-child" open-type="share">
+        <view class="add-child">
+          <image class="add-baby" src="../../images/icon_addbaby.png"></image>
+          <text class="invite-baby">邀请宝宝</text>
+        </view>
+      </button>-->
+      <block wx:key="{{index}}"  wx:for="{{children}}">
+          <view id="line{{index}}" class="child-line"></view>
+          <view class="have-child" data-index="{{index}}" bindtap="handleClickChild">
+            <view class="header-icon">
+              <image class="child-icon" src="{{item.avatarUrl}}"></image>
+              <text class="child-tag">{{item.roleTag}}</text>
+            </view>
+            <view class="child-deposit">
+              <text class="cunkuan">存款</text>
+              <text class="bg-line">
+              <text class="sum">{{item.deposit}}</text>
+              <text class="yuan">元</text>
+              </text>
+            </view>
+            <view class="footer">
+            <text class="child-lucre">
+              <text>昨</text>
+              <text class="bg-line" style="padding-bottom:5px;">
+                <text>日收益</text>
+                <text class="lucre-sum" style="font-size:32rpx;">{{item.lucre}}</text>
+                <text>元</text>
+              </text>
+            </text>
+            <text class="child-task">
+              <text>进行中任务</text>
+              <text class="task-sum">{{item.taskSum}}</text>
+              <text>个</text>
+            </text>
+          </view>
+        </view>
+      </block>
+      <button id="toBaby"  class="no-child" open-type="share">
+        <view class="add-child">
+          <image class="add-baby" src="../../images/icon_addbaby.png"></image>
+          <text class="invite-baby">邀请宝宝</text>
+        </view>
+      </button>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,47 @@
+{
+  "pages":[ 
+    "pages/enter/enter",
+    "pages/familySet/familySet",
+    "pages/babySet/babySet",
+    "pages/taskDetailOne/taskDetailOne",
+    "pages/taskDetail/taskDetail",
+    "pages/index/index",   
+    "pages/roleSelect/roleSelect",
+    "pages/addBaby/addBaby",
+    "pages/addFamily/addFamily",
+    "pages/familyInvite/familyInvite",
+    "pages/babyInvite/babyInvite",
+    "pages/askHongBao/askHongBao",
+    "pages/personalInfo/personalInfo",
+    "pages/home/home", 
+    "pages/taskList/taskList",
+    "pages/wallet/wallet",
+    "pages/cash/cash",
+    "pages/aboutproduct/aboutproduct",    
+    "pages/share/share",
+    "pages/assignTask/assignTask",
+    "pages/collectMoney/collectMoney",
+    "pages/giveHongBao/giveHongBao"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#1C1B21",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小友钱袋"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon_homelive_nor.png",
+        "selectedIconPath": "images/icon_homelive_sel.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "我的家庭",
+        "iconPath": "images/icon_myhome_nor.png",
+        "selectedIconPath": "images/icon_myhome_sel.png"
+      }
+    ]
+  }
+}

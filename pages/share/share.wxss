@@ -1,0 +1,34 @@
+page{
+    background-color: #FF4A14;
+}
+.container{
+  width:730rpx;
+  height: 1154rpx;
+  background-image: url("http://paicwx.oss-cn-shanghai.aliyuncs.com/zhuangshidaikuang.png");
+  background-size:100% 100%;
+  position: relative;
+  top:30rpx;
+  left: 14rpx;
+}
+.btn{
+  width:570rpx;
+  height:200rpx;
+  margin:auto;
+  background-color: white;
+  background-size:100% 100%;
+}
+.toBaby{
+  background-image: url("http://paicwx.oss-cn-shanghai.aliyuncs.com/sharebaby.png");
+  margin-top:78rpx;
+}
+.toFamily{
+   background-image: url("http://paicwx.oss-cn-shanghai.aliyuncs.com/shareparents.png");
+   margin-top:88rpx;
+}
+.toFriend{
+   background-image: url("http://paicwx.oss-cn-shanghai.aliyuncs.com/sharefriends.png");
+   margin-top:88rpx;
+}
+.btn::after{
+  border:none;
+}

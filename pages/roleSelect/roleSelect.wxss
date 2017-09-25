@@ -1,0 +1,31 @@
+/* pages/roleSelect/roleSelect.wxss */
+page{
+    background-color: #FF4A14;
+}
+.container{
+  width:730rpx;
+  height: 1154rpx;
+  background-image: url("http://paicwx.oss-cn-shanghai.aliyuncs.com/zhuangshidaikuang.png");
+  background-size:100% 100%;
+  position: relative;
+  top:30rpx;
+  left: 14rpx;
+}
+.btn{
+  width:570rpx;
+  height:200rpx;
+  margin:auto;
+  background-color: white;
+  background-size:100% 100%;
+}
+.isFamily{
+  background-image: url(http://paicwx.oss-cn-shanghai.aliyuncs.com/woshijiazhang.png);
+  margin-top:78rpx;
+}
+.isBaby{
+   background-image: url("http://paicwx.oss-cn-shanghai.aliyuncs.com/woshibaobao.png");
+   margin-top:88rpx;
+}
+.btn::after{
+  border:none;
+}

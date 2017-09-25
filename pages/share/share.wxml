@@ -1,0 +1,5 @@
+<view class="container"> 
+  <button id="toBaby" class="btn toBaby" open-type="share"></button>
+  <button id="toParent" class="btn toFamily" open-type="share"></button>
+  <button id="toFriend" class="btn toFriend" open-type="share"></button>
+</view> 

@@ -1,0 +1,219 @@
+page{
+ background-color: #FF4A14;
+}
+.container{
+  width:730rpx;
+  padding-left:50rpx;
+  box-sizing: border-box;
+  height: 1154rpx;
+  background-image:url("http://paicwx.oss-cn-shanghai.aliyuncs.com/shouhuikuang_big.png");
+  background-size:100% 100%;
+  position: relative;
+  top:30rpx;
+  left: 14rpx;
+}
+.assign-who{
+  margin-top:50rpx;
+  font-size: 36rpx;
+}
+.img{
+  width: 40rpx;
+  height:46rpx;
+  float:right;
+  margin:0rpx;
+  margin-right:57rpx;
+  margin-bottom:-4rpx;
+}
+.avatarUrl{
+  margin:32rpx 0 0;
+  height:110rpx;
+  overflow: hidden;
+}
+.col{
+  float:left;
+  width:100rpx;
+  text-align:center;
+  position: relative;
+  margin-right: 30rpx;
+}
+.col .bao{
+  border-radius: 50%;
+  border: 4rpx solid black;
+  box-sizing: border-box;
+  padding: 10rpx;
+  width: 100rpx;
+  height: 100rpx;
+  vertical-align: middle;
+  margin-bottom: 20rpx;
+  position:relative;
+}
+.col .del{
+  width:30rpx;
+  height:30rpx;
+  position: absolute;
+  top:0rpx;
+  left: 72rpx;
+}
+.col text{
+  display: block;
+  font-size: 28rpx;
+}
+.addrole{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.fengexian{
+  width: 630rpx;
+  height:2rpx;
+  margin:40rpx 0 0;
+}
+.do-what-detali{
+  float: left;
+  margin: 14rpx 76rpx 0 0;
+}
+.do-what-detali .iconSrc{
+  width: 45rpx;
+  height: 52rpx;
+  display: block;
+  margin:auto;
+}
+.do-what-detali text{
+  font-size: 26rpx;
+}
+.public-desc{
+  font-size:28rpx;
+  overflow: hidden;
+  margin-top:34rpx;
+  position:relative;
+}
+.public-desc image{
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  top:18rpx;
+  right:78rpx;
+  z-index: 9;
+}
+.public-desc .yuan{
+  position: absolute;
+  top:18rpx;
+  right:25rpx;
+}
+input{
+  width: 520rpx;
+  height:72rpx;
+  background: #FFF;
+  border: 1px solid #999;
+  border-radius: 4px;
+  float:right;
+  margin-right:60rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.warn{
+  float:left;
+  margin-left:96rpx;
+  color:red;
+  font-size: 24rpx;
+}
+.assignTask{
+  width: 576rpx;
+  height: 80rpx;
+  margin:40rpx auto 20rpx;
+  background: #D8232A;
+  border: 2rpx solid #F30E17;
+  border-radius: 200rpx;
+  font-size: 36rpx;
+  color: #FFF;
+  line-height: 80rpx;
+}
+.assignTaskDes{
+  font-size: 26rpx;
+  color: #666;
+  text-align: left;
+}
+/*复选弹窗模块样式*/
+.model{
+  position: absolute;
+  top:-2rpx;
+  left: 0rpx;
+  right:0rpx;
+  bottom: 0rpx;
+  background-color: rgba(0,0,0,.5);
+  z-index: 999;
+}
+.model-bg{
+  width:712rpx;
+  height: 715rpx;
+  padding-top:76rpx;
+  box-sizing:border-box;
+  background-image: url("http://paicwx.oss-cn-shanghai.aliyuncs.com/model.png");
+  background-size:100% 100%;
+  position: absolute;
+  top:13%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.model-list{
+  text-align: left;
+  margin:55rpx 0 0 100rpx;
+}
+.label-image{
+  border-radius: 50%;
+  border: 4rpx solid black;
+  box-sizing: border-box;
+  padding: 10rpx;
+  width: 100rpx;
+  height: 100rpx;
+  vertical-align: middle;
+  margin-right:36rpx;
+}
+checkbox-group{
+   margin-left:-300rpx;
+}
+label{
+  display: block;
+  margin-top:80rpx;
+  position: relative;
+}
+checkbox{
+  position: absolute;
+  margin-left:158rpx;
+  margin-top:25rpx;
+}
+.confir{
+  width: 310rpx;
+  height: 80rpx;
+  margin:70rpx auto 20rpx;
+  background: #D8232A;
+  border: 2rpx solid #F30E17;
+  border-radius: 200rpx;
+  font-size: 36rpx;
+  color: #FFF;
+  line-height: 80rpx;
+}
+.pick{
+  margin-top: 15rpx;
+}
+.pick text{
+  font-size:28rpx;
+}
+picker{
+  display: inline-block;
+  width:437rpx;
+  height:72rpx;
+  background:#FFF;
+  border:1px solid #999;
+  border-radius:4px;
+  margin-right:60rpx;
+  padding-left:20rpx;
+  box-sizing:border-box;
+  margin-left:8px;
+  vertical-align: middle;
+}
+.pick .weui-input{
+  height:72rpx;
+  line-height: 72rpx;
+}

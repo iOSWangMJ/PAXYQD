@@ -1,0 +1,194 @@
+<!--personalInfo.wxml-->
+<view class="container">
+  <!--跳转到首页按钮-->
+  <view class="goHomeContainer" bindtap="goHome">
+    <image src="../../images/businessIcon/gohome@2x.png" class="goHome"></image>
+  </view>
+  <!--上部内容展示区域-->
+  <view class="topContainer">
+    <image src="{{topHeadImage}}" class="topHeadImage"></image>
+    <text class="topTag">{{topTag}}</text>
+    <text class="topText" wx:if="{{isParent}}">宝宝存款</text>
+    <text class="topText" wx:if="{{!isParent}}">存款</text>
+    <view class="topsum">
+      <text class="sum">{{sum}}</text>
+      <text class="yuan yuanTop">元</text>
+    </view>    
+  
+    <!--进入家长详情页时展示的信息-->
+    <view wx:if="{{isParent}}">
+      <text class="topTaskCommon topTaskLeftPar">进行中任务</text>
+      <view class="topTask">
+        <text class="topTaskSum">{{taskSum}}</text>
+        <text>个</text>
+      </view>
+      <!--<text class="topTaskRight">个</text>-->
+      <text class="topRate" bindtap="rateChange">一千元每周{{topRate}}块钱</text>
+      <image src="../../images/businessIcon/icon_arrowright_gray.png" class="brackets bracketsTop"></image>
+    </view>
+
+    <!--进入宝宝详情页时展示的信息-->
+    <view wx:if="{{!isParent}}">
+      <text class="topTaskCommon topTaskLeftChild">进行中任务</text>
+      <view class="topTask topTaskChild">
+        <text class="topTaskSum">{{taskSum}}</text>
+        <text>个</text>
+      </view>  
+    </view>
+  </view>
+  <!--下部内容展示区域-->
+  <view class="bottomContainer">
+    <!--钱袋部分-->
+    <view>
+      <!--钱袋标签部分-->
+      <view>
+        <image src="{{walletImagePar}}" class="walletTagPar" wx:if="{{isParent}}"></image>
+        <image src="{{walletImageChild}}" class="walletTagChild" wx:if="{{!isParent}}"></image>
+      </view>
+      <!--钱袋详情部分--start-->
+      <scroll-view scroll-y class="walletDeatil">
+        <!--钱袋详情模块模板--start-->
+        <view style="margin-bottom:20rpx;" data-id="{{item.groupMemberId}}" data-avatarUrl="{{item.avatarUrl}}" data-money="{{item.money}}"  data-roleTag="{{item.roleTag}}" bindtap="goWallet" wx:key="*this" wx:for="{{walletDeatil}}" wx:if="{{walletNotNull}}">
+            <view class="contentHead" data-id="{{item.groupMemberId}}" catchtap="goPerson">
+            <view class="my-wallet">
+                <!--点击头像跳转到当前此人的详情页-->
+              <image src="{{item.avatarUrl}}" class="contentImage" ></image>
+                <view style="width:314rpx;margin-left:10rpx;padding:8rpx;">
+                  <text class="depositPer" wx:if="{{isParent}}">{{depositPar}}</text>
+                  <text class="depositPer" wx:if="{{!isParent}}">{{depositChild}}</text>
+                  <text class="depositSum">{{item.money}}</text>
+                  <text class="yuan">元</text>
+                </view>
+                <view style="padding:8rpx;">
+                  <text class="lucre">昨日收益</text>
+                  <text class="lucreSum">{{item.lucre}}</text>
+                  <text class="yuan">元</text>
+                </view>     
+              </view>
+            </view>
+            <image src="../../images/fengexiancheng.png" style="height:4rpx;display:block;width:80%;margin-left:70rpx;"></image>
+        </view>        
+        <!--钱袋详情模块模板--end-->
+        <!--当没有此动态时显示以下模块-->
+        <view wx:if="{{!walletNotNull}}" style="width:100%;height:100%;text-align:center;">
+          <image src="../../images/qiandai@2x.png"   class="walletNotNull"></image>
+        </view>
+      </scroll-view>
+       <!--钱袋详情部分--end-->
+    </view>
+    <!--钱袋与任务的分割线-->
+    <image src="{{divideImage}}" class="devideImage"></image>
+    <!--任务部分-->
+    <view style="margin-top:20rpx;">
+      <!--任务标签部分-->
+      <view>
+        <image src="{{taskTag}}" class="walletTagPar"></image>
+        <span class="taskMore" bindtap="taskMore" wx:if="{{taskNotNull}}">
+          <text class="more">更多</text>
+          <image src="../../images/businessIcon/icon_arrowright_gray.png" class="brackets"></image>
+        </span>        
+      </view>
+      <scroll-view scroll-y style="height: 324rpx;">
+      <!--任务详情列表模板--start-->
+        <view style="margin-top:22rpx;" wx:for="{{taskDetail}}" wx:key="*this" bindtap="taskMore" wx:if="{{taskNotNull}}">
+          <!--第一行详情-->
+          <view>
+            <image src="{{item.iconSrc}}" class="taskIcon"></image>
+            <text class="taskDesc">{{item.desc}}</text>
+            <template is="{{item.taskState}}"/>
+          </view>
+          <!--头像部分-->
+          <view class="contentHead" style="margin-top:12rpx;" data-id="{{item.groupMemberId}}" catchtap="goPerson">
+            <image src="{{item.avatarUrl}}" class="contentImage" style="margin-right:20rpx;"></image>
+          </view>
+          <!--最后一行详情-->
+          <view class="taskFin">
+            <text>完成期限 {{item.finishTime}}</text>
+            <!--展示金钱-->
+            <span class="taskMore">
+              <text>+</text>
+              <text class="taskMoney">{{item.money}}</text>          
+              <text class="yuan">元</text>
+            </span>        
+          </view>
+          <!--分割线-->
+          <image src="{{divideImage}}" class="devideImage"></image>
+        </view>
+        <!--当没有此动态时显示以下模块-->
+        <view wx:if="{{!taskNotNull}}" style="width:100%;height:100%;text-align:center;">
+          <image  src="../../images/renwu@2x.png"  class="taskNotNull"></image>
+        </view>        
+      <!--任务详情列表模板--end-->
+      </scroll-view>
+
+    </view>
+  </view>
+</view>
+
+<!--弹出框区域-->
+<view wx:if="{{popShow}}">
+  <!--遮罩层区域-->
+  <view class="popShow" catchtap="popClose"></view>
+  <!--弹出框内容区域-->
+  <view class="popContainer">
+    <view class="popFirstDesc">
+      <text>您为宝宝提供：</text>
+    </view>
+    <view class="popRateDesc">
+      <text>一千元每周</text>
+      <text class="popRate">{{topRate}}</text>
+      <text>块钱的收益</text>
+    </view>
+    <!--可滑动块-->
+    <view class="section section_gap" >
+        <view class="body-view">
+          <slider bindchange="sliderChange" min="0" max="5" step="1" value="{{popValue}}"/>
+        </view>
+    </view>
+    <!--显示区域-->
+    <view style="position:relative;">
+      <view class="popValue"></view>
+      <view class="popShowValue" style="{{rateWidth}}"></view>
+    </view>
+    <!--滑块对应的值-->
+    <view class="popRuler">
+      <text class="popRulerValue">0</text>
+      <text class="popRulerValue">1</text>
+      <text class="popRulerValue">2</text>
+      <text class="popRulerValue">3</text>
+      <text class="popRulerValue">4</text>
+      <text>5</text>
+    </view>
+    <!--确定按钮-->
+    <view class="popButton" bindtap="popRateChange">
+      <text>确定</text>
+    </view>
+    <!--页面功能描述-->
+    <view class="popDesc">
+      设置后为宝宝存款提供活期收益，每日按当日存款金额计算收益并进行结算
+    </view>
+  </view>
+</view>
+
+  
+<!--状态对象模板  -->
+<template name="01">
+  <view class="taskState taskOn">
+    <span>进行中</span>
+  </view>
+</template>
+<template name="02">
+  <view class="taskState taskApplication">
+    <span>申请完成</span>
+  </view>
+</template>
+<template name="03">
+  <view class="taskState taskClose">
+    <span>已关闭</span>
+  </view>
+</template>
+<template name="04">
+  <view class="taskState taskComplate">
+    <span>已完成</span>
+  </view>
+</template>

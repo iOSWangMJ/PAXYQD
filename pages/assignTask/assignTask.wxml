@@ -1,0 +1,97 @@
+<!--宝宝头像和昵称模板-->
+<!--<template name="role">
+      <view class="col">
+          <image src="{{avatarUrl}}" class="bao">
+          </image>
+          <image src="../../images/del.png" class="del"></image>
+          <text>{{nickName}}</text>
+      </view>
+</template>-->
+<!--分割线模板-->
+<template name="fengexian">
+    <image src="../../images/fengexian.png" class="fengexian"></image>
+</template>
+
+
+
+<view class="container">
+  <view class="assign">
+      <view class="assign-who">
+        <text>给宝宝派个任务吧~</text>
+        <image src="../../images/help.png" class="img"></image>
+      </view>
+      <view class="avatarUrl">
+          <!--<template is="role" data="{{...role}}"></template>-->
+          <view class="col" wx:for="{{dataArray}}" wx:key="col-key">
+            <image src="{{item.avatarUrl}}" class="bao"></image>
+            <image src="../../images/del.png" class="del" bindtap="delPerson" data-index="{{index}}"></image>
+            <text>{{item.roleTag}}</text>
+         </view>
+          <image wx:if="{{!dataArray.length}}" src="../../images/pairenwu_icon_add.png" class="addrole" bindtap="modalTap"></image>
+      </view>
+  </view>
+  <view class="do">
+    <template is="fengexian"></template>
+    <view class="do-what" style="overflow:hidden">
+        <text style="float:left;font-size:36rpx;margin:36rpx 30rpx 0 0;">做点啥</text>
+        <view class="do-what-detali" wx:for="{{do}}" wx:key="do-key">
+            <image src="{{changeSrc==index?item.activeIconSrc:item.iconSrc}}" class="iconSrc" data-src="{{index}}" bindtap="changeSrc" data-currentSrc="{{item.activeIconSrc}}"></image>
+            <text>{{item.txt}}</text>
+        </view>
+    </view>
+  </view>
+  <form bindsubmit="formSubmit">
+  <view class="public">
+    <view class="public-desc">
+      <text style="height:72rpx;line-height:72rpx">具体点</text>
+      <input placeholder="帮妈妈打扫房间" name="input"/>
+    </view>
+    <template is="fengexian"></template>
+  </view>
+  <view class="pick">
+     <text>任务完成日期</text>
+     <picker mode="date" value="{{date}}" start="{{startDate}}" end="2030-12-12" bindchange="bindDateChange">
+      <view class="weui-input">{{date}}</view>
+    </picker>
+    <template is="fengexian"></template>
+  </view>
+    <view class="pick">
+    <text>任务完成时间</text>
+    <picker mode="time" value="{{time}}" start="{{startTime}}" end="24:00" bindchange="bindTimeChange">
+      <view class="weui-input">{{time}}</view>
+    </picker>
+    <template is="fengexian"></template>
+  </view>
+  <view class="public">
+    <view class="public-desc">
+      <text style="height:72rpx;line-height:72rpx">给点啥</text>
+      <input placeholder="金额不能超过9999" value="{{dataList.money}}"   bindblur="blur" name="money"/>
+      <text class="yuan">元</text>
+    </view>
+    <view>
+      <text class="warn" wx:if="{{warn}}">请输入整数或小数点后最多两位</text></view>
+  </view>
+  <button class="assignTask" formType="submit">派任务</button>
+  <view class="assignTaskDes">给宝宝任务,完成后上传成果。在您确认后,任务奖励金将计入宝宝在您这边的存款中。 </view>
+  </form>
+</view>
+<!--复选弹窗模块-->
+<view class="model" wx:if="{{model}}">
+    <form class="model-bg" bindsubmit="modFormSubmit">
+        <text>选择宝宝</text>
+         <scroll-view style="height:380rpx" scroll-y="true">
+        <checkbox-group name="checkbox" >
+             <label wx:for="{{dataList1}}" wx:key="model-key"><image src="{{item.avatarUrl}}" class="label-image"></image>{{item.roleTag}}<checkbox value="{{index}}"/></label>
+        </checkbox-group>
+        </scroll-view>
+        <button class="confir" formType="submit">确认</button>
+    </form>
+</view>
+
+<!--提示任务弹窗模块-->
+<view class="popShow" wx:if="{{popShow}}">
+    <view class="popContainer">
+    信息填写不全,请补填完整
+    </view>
+</view>
+

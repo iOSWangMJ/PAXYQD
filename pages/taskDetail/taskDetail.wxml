@@ -1,0 +1,53 @@
+<view class="container">
+  <form bindsubmit="handleConfirm">
+    <view class="task-desc">
+        <view class="task-text">
+           <image src="{{IconSrc}}" class="task-icon"></image>
+           <text>{{desc}}</text>
+        </view>
+        <view class="image-icon">
+            <image  src="{{avatarUrl[0]}}" class="chengliang"></image>
+            <image  src="{{avatarUrl[1]}}" class="erbao"></image>
+            <view class="daojishi">
+            <text class="task-time">{{time}}</text>
+            </view>
+        </view>
+        <view class="task-num" style="position:relative;">
+          <text class="task-day">{{day}}</text>
+          
+          <view class="task-money">{{add}}<text class="task-money-color">+{{money}}</text>元
+          </view>
+        </view>
+    </view>
+     <view class="area">
+      <textarea name="textarea" bindblur="handleTextAreaBlur" />
+    </view>
+     <view class="upImage" style="position:relative;height:120rpx">
+        <block wx:key="{{index}}" wx:if="{{tempFilePaths}}" wx:for="{{tempFilePaths}}">
+          <image src="{{item}}" class="image"></image>
+        </block>
+        <block>
+          <view class="image-plus" bindtap="chooseImage">
+          </view>
+        </block>    
+    </view>
+    <button form-type="submit" class="confirm">确认完成</button>
+    <view class="hongbao-icon">
+      <image src="../../images/xiaorenhongbao.png"></image>
+    </view>
+  </form>
+</view>
+
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view> 
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}"> 
+  
+ <!--drawer content-->
+ <view class="drawer_title">您的任务已过期</view> 
+ <view class="drawer_content">
+ 点击确定或空白处返回首页
+ </view>
+ <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view> 
+</view>

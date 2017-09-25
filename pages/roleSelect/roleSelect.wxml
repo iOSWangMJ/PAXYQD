@@ -1,0 +1,5 @@
+<!--pages/roleSelect/roleSelect.wxml-->
+<view class="container">
+  <button class="btn isFamily" bindtap="bindFamilyTap"></button>
+  <button class="btn isBaby" bindtap="bindBabyTap"></button>
+</view> 

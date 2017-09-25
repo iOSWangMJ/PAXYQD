@@ -1,0 +1,112 @@
+.container{
+  width:730rpx;
+  height:1154rpx;
+  background-image: url('http://paicwx.oss-cn-shanghai.aliyuncs.com/shouhuikuang_big.png');
+  background-size:100% 100%;
+  position:relative;
+  top:30rpx;
+  left:14rpx;
+}
+
+/*顶部标题*/
+.topTitle{
+  width:228rpx;
+  height:66rpx;
+  display:block;
+  margin-top:28rpx;
+  margin-left:254rpx;
+  margin-bottom:32rpx;
+}
+/*任务列表*/
+.taskListContent{
+  width:730rpx;
+  height:982rpx;
+  box-sizing:border-box;
+  padding-left:56rpx;
+  padding-right:40rpx;
+}
+
+.taskIcon{
+  width:24rpx;
+  height:32rpx;
+  padding-right:20rpx;
+  vertical-align: middle;
+}
+.taskDesc{
+  font-size: 28rpx;
+  color: #333;
+}
+.taskMore{
+  float:right;
+  margin-right:30rpx;
+}
+.taskState{
+  display:inline-block;
+  font-size: 24rpx;
+  color: #FFF;
+  letter-spacing: -1.26rpx;
+  float:right;
+  margin-right:30rpx;
+  padding:4rpx 10rpx;
+}
+
+.taskFin{
+  font-size: 22rpx;
+  color: #666;
+  height:44rpx;
+  line-height:44rpx;
+}
+.taskMoney{
+  font-size: 30rpx;
+  color: #D8232A;
+}
+
+.taskOn{
+  background: #D8232A;
+  border-radius: 200rpx;
+}
+.taskApplication{
+  background: #0CD41A;
+  border-radius: 200rpx;
+}
+.taskClose{
+  background: #999;
+  border-radius: 200rpx;
+}
+.taskComplate{
+  background: #4793F5;
+  border-radius: 200px;
+}
+
+.contentHead{
+  display:inline-block;
+  margin-right:26rpx;
+  vertical-align: middle;
+}
+.contentImage{
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 4rpx solid black;
+  padding: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+/*分割线样式*/
+.devideImage{
+  width:611rpx;
+  height:4rpx;
+  display:block;
+}
+/*元样式*/
+.yuan{
+  font-size: 22rpx;
+  color: #333;
+  letter-spacing: -0.70rpx;
+}
+
+.taskNotNull{
+  width:30%;
+  height:160rpx;
+  display:inline-block;
+  padding-top:20rpx;
+}

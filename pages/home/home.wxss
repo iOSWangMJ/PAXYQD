@@ -1,0 +1,200 @@
+page{
+  background-image: url('http://paicwx.oss-cn-shanghai.aliyuncs.com/bg.png');
+  background-size: 100% 100%;
+}
+.container{
+  background: url('http://paicwx.oss-cn-shanghai.aliyuncs.com/bg_zhuangshi.png');
+  background-size: 100% 100%;
+
+}
+.content{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.clearmargin::before{
+  content: '';
+  display: table;
+}
+.child-line,.line{
+  width:2px;
+  background:black;
+  position: absolute;
+  left: 50%;
+  margin-left: -1px;
+}
+.line{
+  margin-top: -420px;
+  height:500px;
+}
+.child-line{
+  margin-top: -19rpx;
+  height: 96rpx;
+}
+.hole{
+  border: 1px solid black;
+  background: #FFD718;
+  border-radius: 50%;
+  margin: 0 auto;
+  height: 10px;
+  width: 10px;
+  margin-bottom: 20rpx;
+}
+.parent{
+  margin-top: 62px;
+  background: url('http://paicwx.oss-cn-shanghai.aliyuncs.com/jiazhangkuang_chunkuang.png');
+  background-size: 100% 100%;
+  padding: 18px 66rpx 60rpx;
+}
+.parent-text{
+  text-align: center;
+  font-size: 40rpx;
+  color: #FFF;
+  letter-spacing: -0.88rpx;
+}
+.parent-member{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  height: 100%;
+}
+#toParent{
+  background: url("http://paicwx.oss-cn-shanghai.aliyuncs.com/add_square.png");
+  background-size: 100% 100%;
+  background-color: white;
+}
+.personal{
+  margin-top: 40rpx;
+  width: 16.6%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.personal-icon{
+  margin: 0 auto;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 4rpx solid black;
+  padding: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+  background-color: white;
+  
+}
+.parent-name{
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #FFF;
+  letter-spacing: -0.7rpx;
+}
+.person-add{
+  color: #999;
+}
+.no-child,.have-child{
+  margin-top: 72rpx;
+  box-sizing: border-box;
+}
+.no-child{
+  background: url('http://paicwx.oss-cn-shanghai.aliyuncs.com/baobaokuang_chunkuang.png');
+  background-size: 100% 100%;
+  height: 350rpx;
+  padding: 80rpx 140rpx;
+}
+.have-child{
+  background: url('http://paicwx.oss-cn-shanghai.aliyuncs.com/baby_bg@2x.png');
+  background-size: 100% 100%;
+  padding: 24rpx 20rpx 0;
+}
+.add-child{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.add-baby{
+  margin: 36rpx auto 14rpx;
+  height: 54rpx;
+  width: 60rpx;
+}
+.invite-baby{
+  font-size: 40rpx;
+  color: #333;
+  letter-spacing: -0.7rpx;
+}
+.header-icon{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.child-icon{
+  margin: 0 auto;
+  width: 60rpx;
+  height: 60rpx;
+}
+.child-tag{
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+  font-size: 32rpx;
+  color: #333;
+  letter-spacing: -0.56rpx;
+}
+.child-deposit{ 
+  text-align: center;
+}
+.cunkuan{
+  font-size: 32rpx;
+  color: #333;
+  letter-spacing: -0.78rpx;
+  padding-right:6rpx;
+}
+.yuan{
+  font-size: 22rpx;
+  color: #333;
+  letter-spacing: -0.70rpx;
+}
+.sum{
+  padding-right:6rpx;
+  font-size: 52rpx;
+  color: #D8232A;
+  letter-spacing: -0.78rpx;
+}
+.bg-line{
+  background:url('http://paicwx.oss-cn-shanghai.aliyuncs.com/fengexian.png') no-repeat left bottom;
+  background-size:100% 2px;
+}
+.footer{
+  height: 160rpx;
+  display: table;
+  width: 100%;
+  margin-top: 46rpx;
+  font-size: 24rpx;
+  color: #333;
+  letter-spacing: -0.78rpx;
+}
+.child-lucre{
+  display: table-cell;
+  padding-left: 40rpx;
+  height: 24px;
+}
+.lucre-sum{
+  padding: 0 10rpx 0 20rpx;
+  font-size: 32rpx;
+  color: #D8232A;
+  letter-spacing: -0.78rpx;
+}
+.child-task{
+  display: table-cell;
+  text-align: right;
+  padding-right: 30rpx;
+  height: 24px;
+}
+.task-sum{
+  color: #D8232A;
+  padding-left: 20rpx;
+  padding-right: 8rpx;
+}
+#line0{
+  display: none;
+}
+.no-child::after{
+  border: none;
+}

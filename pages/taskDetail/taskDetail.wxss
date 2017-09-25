@@ -1,0 +1,130 @@
+page{
+ background-color: #FF4A14;
+}
+.container{
+  width:730rpx;
+  height: 1154rpx;
+  background-image: url("http://paicwx.oss-cn-shanghai.aliyuncs.com/shouhuikuang_big.png");
+  background-size:100% 100%;
+  position: relative;
+  top:30rpx;
+  left: 14rpx;
+}
+.task-text{
+  margin:50rpx 0 0 58rpx;
+}
+.task-text .task-icon{
+  width:22rpx;
+  height: 32rpx;
+  display: inline-block;
+  vertical-align:top;
+  margin-top:8rpx;
+  margin-right:14rpx;
+}
+.task-text text{
+  font-size: 32rpx;
+  color: #333;
+}
+.image-icon{
+  margin:14rpx 0 0 58rpx;
+  position: relative;
+}
+.image-icon .chengliang,.image-icon .erbao{
+  border-radius: 50%;
+  border: 4rpx solid black;
+  box-sizing: border-box;
+  padding: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.image-icon .erbao{
+  margin-left:10rpx;
+}
+.image-icon .clock{
+  width:118rpx;
+  height:88rpx;
+  position: absolute;
+  right:57rpx;
+  top:-55rpx;
+}
+.task-day{
+  position: absolute;
+  top: -108rpx;
+  right: 190rpx;
+  font-size: 40rpx;
+}
+.task-time{
+
+  font-size:26rpx;
+  color:white;
+}
+.task-money{
+  float:right;
+  font-size: 26rpx;
+  color: #666;
+  margin-right:66rpx;
+  margin-top:-20rpx;
+}
+.task-money-color{
+  color:#F30E17;
+  font-weight: bold;
+}
+textarea{
+  width:610rpx;
+  height: 152rpx;
+  background: #FFF;
+  border: 2rpx solid #999;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);
+  border-radius: 8rpx;
+  margin:40rpx auto 0;
+  padding-top:20rpx;
+  padding-left:20rpx;
+}
+.image-plus{
+  width:100rpx;
+  height:100rpx;
+  background-image: url("http://paicwx.oss-cn-shanghai.aliyuncs.com/add_square.png");
+  background-size:100% 100%;
+  /*position: absolute;
+  top:20rpx;
+  left:46rpx;*/
+  margin:20rpx 0 0 46rpx;
+  display: inline-block;
+}
+ .image{
+  width:100rpx;
+  height:100rpx;
+  /*position: absolute;
+  top:20rpx;
+  left: 46rpx;*/
+  margin:20rpx 0 0 46rpx;
+  border-radius:8rpx;
+}
+.confirm{
+  width:550rpx;
+  height: 80rpx;
+  margin:80rpx auto 0;
+  background: #D8232A;
+  border: 1px solid #F30E17;
+  border-radius: 160rpx; 
+  font-size: 36rpx;
+  color: #FFF;
+  line-height: 80rpx;
+} 
+.hongbao-icon image{
+  width:140rpx;
+  height:154rpx;
+  margin:102px 54rpx 0 536rpx;
+}
+
+.daojishi{
+  position: absolute;
+  top: -70rpx;
+  right: 40rpx;
+  line-height: 58px;
+  text-align: center;
+  width:140rpx;
+  height:55px;
+  background:url("http://paicwx.oss-cn-shanghai.aliyuncs.com/daojishi_bg.png");
+  background-size: 100% 100%;
+}

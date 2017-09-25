@@ -1,0 +1,185 @@
+page{
+ background-color: #FF4A14;
+}
+.container{
+  width:730rpx;
+  height: 1154rpx;
+  background-image: url("http://paicwx.oss-cn-shanghai.aliyuncs.com/shouhuikuang_big.png");
+  background-size:100% 100%;
+  position: relative;
+  top:30rpx;
+  left: 14rpx;
+}
+.txt{
+  margin:48rpx 0 0 70rpx;
+  font-size:32rpx;
+  color: #333;
+}
+.avatarUrl{
+  margin:32rpx 0 0 60rpx;
+  overflow: hidden;
+  height:110rpx;
+}
+.col{
+  float:left;
+  text-align:center;
+  position: relative;
+  margin-right: 30rpx;
+}
+.col .bao{
+  border-radius: 50%;
+  border: 4rpx solid black;
+  box-sizing: border-box;
+  padding: 10rpx;
+  width: 100rpx;
+  height: 100rpx;
+  position:relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.col text{
+  font-size: 38rpx;
+  margin-left:22rpx;
+}
+.addrole{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.input{
+  border:2rpx solid #999;
+  margin:28rpx auto 0;
+  width: 630rpx;
+  height:80rpx;
+  background: #FFF;
+  border-radius: 4px;
+}
+.input .loah,.input .money{
+  font-size: 32rpx;
+  color: #333;
+  line-height: 80rpx;
+}
+.input .loah{
+  margin-left:20rpx;
+}
+.input input{
+  float:right;
+  height:100%;
+  text-align: right;
+  margin-right:58rpx;
+}
+.warn{
+  float:right;
+  margin-right:49rpx;
+  color:red;
+  font-size: 24rpx;
+}
+textarea{
+  width:610rpx;
+  height: 152rpx;
+  background: #FFF;
+  border: 2rpx solid #999;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);
+  border-radius: 8rpx;
+  margin:40rpx auto 0;
+  padding-top:20rpx;
+  padding-left:20rpx;
+  font-size: 32rpx;
+  color: #666;
+}
+.totalMoney{
+  height: 112rpx;
+  margin-top:48rpx;
+  line-height: 112rpx;
+}
+.totalMoney text{
+  float:left;
+}
+ .totalMoney .first{
+   margin:0 22rpx 0 220rpx;
+   font-size:44rpx;
+ }
+ .totalMoney .last{
+  font-size: 80rpx;
+  color: #333;
+  font-weight: bold;
+}
+.giveMoney{
+  width:550rpx;
+  height: 80rpx;
+  margin:44rpx auto 96rpx;
+  background: #D8232A;
+  border: 1px solid #F30E17;
+  border-radius: 160rpx; 
+  font-size: 36rpx;
+  color: #FFF;
+  line-height: 80rpx;
+} 
+.giveMoneyDes{
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+}
+/*单选弹窗样式*/
+.model{
+  position: absolute;
+  top:-2rpx;
+  left: 0rpx;
+  right:0rpx;
+  bottom: 0rpx;
+  background-color: rgba(0,0,0,.5);
+  z-index: 999;
+}
+.model-bg{
+  width:712rpx;
+  height: 715rpx;
+  padding-top:76rpx;
+  box-sizing:border-box;
+  background-image: url("http://paicwx.oss-cn-shanghai.aliyuncs.com/model.png");
+  background-size:100% 100%;
+  position: absolute;
+  top:13%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.model-list{
+  text-align: left;
+  margin:55rpx 0 0 100rpx;
+}
+.model-image{
+  border-radius: 50%;
+  border: 4rpx solid black;
+  box-sizing: border-box;
+  padding: 10rpx;
+  width: 100rpx;
+  height: 100rpx;
+  vertical-align: middle;
+  margin-right:36rpx;
+}
+.radio-group{
+  margin-left:-300rpx;
+
+}
+.radio-group label{
+  display: block;
+  margin-top:90rpx;
+  position: relative;
+}
+
+.radio-group radio{
+  position: absolute;
+  margin-left: 158rpx;
+  margin-top:20rpx;
+}
+.confir{
+  width: 310rpx;
+  height: 80rpx;
+  margin:72rpx auto 20rpx;
+  background: #D8232A;
+  border: 2rpx solid #F30E17;
+  border-radius: 200rpx;
+  font-size: 36rpx;
+  color: #FFF;
+  line-height: 80rpx;
+}
